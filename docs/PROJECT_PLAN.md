@@ -22,7 +22,7 @@ Build a reproducible fraud decisioning prototype that connects model quality to 
 **Exit criteria:** target and prediction time are unambiguous; the split strategy is documented; known leakage risks are listed.
 
 ### M2 — Data quality and baseline
-- [ ] Establish reproducible cleaning and validation rules.
+- [x] Establish reproducible cleaning and validation rules.
 - [x] Build a simple baseline (e.g., logistic regression or a transparent heuristic).
 - [x] Split data chronologically when a reliable event timestamp exists.
 - [x] Save baseline metrics with the evaluation set and assumptions clearly stated.
