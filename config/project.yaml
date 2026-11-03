@@ -1,0 +1,30 @@
+project:
+  name: fraud-decisioning-ml
+  purpose: >-
+    Evaluate fraud-risk scoring and decision policies while quantifying the
+    trade-off between fraud prevention and legitimate-customer approvals.
+  random_seed: 42
+  timezone: UTC
+
+# Fill these values only after the dataset audit confirms the actual schema.
+data:
+  path: data/raw/
+  target_column: null
+  timestamp_column: null
+  transaction_amount_column: null
+  entity_id_columns: []
+
+validation:
+  strategy: time_based_when_available
+  test_size: 0.20
+  validation_size: 0.20
+
+# These are evaluation outputs, not assumed business targets.
+metrics:
+  - precision
+  - recall
+  - average_precision
+  - roc_auc
+  - false_positive_rate
+  - approval_rate
+  - fraud_dollar_recall

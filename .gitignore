@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments and local configuration
+.venv/
+.python/
+.tools/
+.uv-cache/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Editors / operating system
+.DS_Store
+.idea/
+.vscode/
+.cursor/
+
+# Datasets and derived local data (do not push raw data to GitHub)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Notebook transient outputs / checkpoints
+.ipynb_checkpoints/
+
+# Large/local artifacts
+*.joblib
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.db
+*.sqlite
+*.model
+*.pt
+*.onnx

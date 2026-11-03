@@ -251,12 +251,24 @@ def main() -> int:
     model.fit(x_train, y_train)
     scores = model.predict_proba(x_test)[:, 1]
 
+    dataset_path = args.dataset.resolve()
+    try:
+        dataset_label = dataset_path.relative_to(repo_root).as_posix()
+    except ValueError:
+        dataset_label = dataset_path.name
+
     report = {
-        "dataset": str(args.dataset),
+        "dataset": dataset_label,
         "target": target,
         "time_column": time_column,
         "split": split_description,
         "rows_used": {"train": int(len(train)), "evaluation": int(len(test))},
+        "sampling": {
+            "train_row_limit": args.max_train_rows or None,
+            "evaluation_row_limit": args.max_test_rows or None,
+            "method": "deterministic proportional sampling within each label after splitting",
+            "random_seed": RANDOM_STATE,
+        },
         "fraud_rate": {
             "train": float(y_train.mean()),
             "evaluation": float(y_test.mean()),

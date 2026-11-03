@@ -1,0 +1,73 @@
+{
+  "dataset": "data/raw/PS_20174392719_1491204439457_log.csv",
+  "target": "isFraud",
+  "time_column": "step",
+  "split": "time split on 'step' at 355.0",
+  "rows_used": {
+    "train": 500000,
+    "evaluation": 200000
+  },
+  "sampling": {
+    "train_row_limit": 500000,
+    "evaluation_row_limit": 200000,
+    "method": "deterministic proportional sampling within each label after splitting",
+    "random_seed": 42
+  },
+  "fraud_rate": {
+    "train": 0.00078,
+    "evaluation": 0.00329
+  },
+  "features_used": [
+    "step",
+    "type",
+    "amount",
+    "oldbalanceOrg",
+    "oldbalanceDest"
+  ],
+  "excluded_columns": [
+    "isFlaggedFraud",
+    "isFraud",
+    "nameDest",
+    "nameOrig",
+    "newbalanceDest",
+    "newbalanceOrig"
+  ],
+  "next_project_ideas": [
+    "Compare the logistic-regression baseline with a tree-based model using the same temporal split.",
+    "Calibrate risk scores and compare review/decline policies at fixed approval and review-capacity levels.",
+    "Add cost-sensitive evaluation after documenting fraud loss, false-decline, and review costs.",
+    "Audit feature leakage, subgroup performance, and score drift before considering deployment."
+  ],
+  "evaluation": {
+    "average_precision": 0.3164956485903676,
+    "roc_auc": 0.9656372848129312,
+    "decision_policy": {
+      "threshold": 0.5,
+      "decline_rate": 0.04501,
+      "precision_at_threshold": 0.05654299044656743,
+      "recall_at_threshold": 0.7735562310030395,
+      "f1_at_threshold": 0.10538302277432712,
+      "confusion_matrix_labels_0_1": [
+        [
+          190849,
+          8493
+        ],
+        [
+          149,
+          509
+        ]
+      ],
+      "review_capacity": 0.02,
+      "reviewed_transactions": 4000,
+      "fraud_captured_in_review_queue": 432,
+      "review_queue_precision": 0.108,
+      "review_queue_fraud_recall": 0.6565349544072948
+    }
+  },
+  "caveats": [
+    "Logistic regression is a baseline, not a production fraud system.",
+    "The decision threshold and review capacity are examples; choose them using business costs and operational constraints.",
+    "Validate feature availability at decision time; post-transaction fields are excluded in this starter.",
+    "Use a documented data source and license, temporal validation, calibration, and fairness checks before drawing conclusions."
+  ]
+}
