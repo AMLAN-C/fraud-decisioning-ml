@@ -73,8 +73,8 @@ pytest
 
 ## Current status
 
-**Milestone 0 — repository scaffold.** The next milestone is to audit the downloaded dataset, confirm its schema and target label, and record the findings in `docs/data_dictionary.md` before model development begins.
+**Milestone 2 — first baseline.** The PaySim dataset has been audited and documented. `init.py` trains an exploratory logistic-regression baseline with a time-based holdout and writes metrics to `reports/baseline_metrics.json`. The next action is to establish explicit, reproducible data cleaning and validation rules before model comparison.
 
 ## Data source
 
-To be completed after the dataset is confirmed. Add the public source URL, licence/terms, row and column counts, target definition, and known caveats to `docs/data_dictionary.md`. Do not add the dataset itself to this repository.
+The project uses the synthetic [PaySim dataset on Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1), listed as CC BY-SA 4.0. See [`docs/data_dictionary.md`](docs/data_dictionary.md) for attribution, audit results, feature notes, and limitations. The raw CSV stays local and is excluded from Git; download it separately into `data/raw/`.
