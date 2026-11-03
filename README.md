@@ -2,7 +2,7 @@
 
 A portfolio project that builds an end-to-end fraud-risk workflow: dataset understanding, leakage-safe feature engineering, supervised risk scoring, decision-threshold optimization, and measurable trade-offs between fraud prevention and legitimate-customer approvals.
 
-> **Portfolio / research project:** this repository is not a production fraud service and must not be used to make real financial decisions. Use public or synthetic data only. Never commit Varo or other employer data, credentials, customer information, or licensed datasets whose terms prohibit redistribution.
+> **Portfolio / research project:** this repository is not a production fraud service and must not be used to make real financial decisions. Use public or synthetic data only. Never commit employer data, credentials, customer information, or licensed datasets whose terms prohibit redistribution.
 
 ## Problem statement
 
