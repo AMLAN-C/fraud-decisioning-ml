@@ -73,7 +73,7 @@ pytest
 
 ## Current status
 
-**Milestone 2 — first baseline.** The PaySim dataset has been audited and documented. `init.py` trains an exploratory logistic-regression baseline with a time-based holdout and writes metrics to `reports/baseline_metrics.json`. The next action is to establish explicit, reproducible data cleaning and validation rules before model comparison.
+**Milestone 2 — first baseline.** The PaySim dataset has been audited and documented. `init.py` applies explicit target validation, leakage exclusions, training-only preprocessing, and an exploratory logistic-regression baseline with a time-based holdout. It writes metrics to `reports/baseline_metrics.json`. Next, build and test transaction-history features that are safe at decision time.
 
 ## Data source
 
