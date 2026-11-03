@@ -275,6 +275,12 @@ def main() -> int:
         },
         "features_used": feature_columns,
         "excluded_columns": sorted(excluded),
+        "cleaning_validation": [
+            "Drop rows with a missing target; require both binary labels 0 and 1.",
+            "Exclude post-transaction balances, the existing rule flag, and raw account identifiers.",
+            "Median-impute numeric predictors and fill missing categorical predictors with a sentinel.",
+            "Fit imputers, scaling, and category encoding on the training partition only.",
+        ],
         "next_project_ideas": [
             "Compare the logistic-regression baseline with a tree-based model using the same temporal split.",
             "Calibrate risk scores and compare review/decline policies at fixed approval and review-capacity levels.",
